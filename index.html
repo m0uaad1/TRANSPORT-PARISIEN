@@ -1,67 +1,263 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAP Garland, LLC</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-      color: #333;
-    }
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    h1, h2 {
-      color: #003366;
-    }
-    .contact {
-      background: #fff;
-      padding: 20px;
-      border-left: 5px solid #003366;
-      margin-top: 30px;
-    }
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 50px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TRANSPORT PARISIEN — Transport & Logistique urbaine • Grigny</title>
+<meta name="description" content="TRANSPORT PARISIEN • Courses dédiées, transferts aéroports, livraison urgente et tournée dernière‑mile à Grigny (91350) et Île‑de‑France." />
+<meta name="robots" content="index,follow" />
+<meta property="og:title" content="TRANSPORT PARISIEN — Transport & Logistique urbaine" />
+<meta property="og:description" content="Transferts, courses pro, livraisons urgentes. Avenue des Sablons, 91350 Grigny." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://lh4.googleusercontent.com/GeHfS2t4wiy4jM_njiyDHuMXwe8XO07v4DXmtK-DiHo1vXfYX0x70XQ6uoKr91K22tHUZLQVCaz5vHr5gi5v_Y75ZInXBfIR6PDJLQLNKMkE5YjqWj8q0mYBk5WtXd2bu8FKADAS" />
+<meta property="og:locale" content="fr_FR" />
+<link rel="icon" href="https://avatars.mds.yandex.net/i?id=33668be0b9d70d901bbb129a9befae41501c233d-9052188-images-thumbs&n=13">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#0ea5a4;   /* teal */
+    --accent:#38bdf8;    /* sky */
+    --ink:#0b1220;       /* deep header */
+    --text:#334155;      /* slate-600 */
+    --muted:#64748b;     /* slate-500 */
+    --bg:#f1f5f9;        /* slate-100 */
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+  a{color:var(--primary);text-decoration:none}
+  a:hover{opacity:.9}
+
+  /* En‑tête */
+  header{
+    background:linear-gradient(120deg,#0b1220,#0d2c3a,#0b1220);background-size:300% 300%;animation:gradientShift 18s ease infinite;
+    color:#fff;padding:24px 16px;border-bottom:6px solid var(--accent);
+  }
+  .wrap{max-width:1120px;margin:auto;padding:0 14px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{width:48px;height:48px;border-radius:10px;border:2px solid var(--accent);object-fit:cover}
+  .brand h1{margin:0;font-size:1.7rem;letter-spacing:.2px}
+  .tagline{margin:2px 0 0;color:#bae6fd}
+
+  nav{background:#0d2c3a}
+  nav .navwrap{max-width:1120px;margin:auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:12px}
+  nav a{color:#fff;font-weight:800;padding:8px 10px;border-radius:8px}
+  nav a:hover{background:rgba(255,255,255,.08)}
+
+  /* Héros */
+  .hero{max-width:1120px;margin:26px auto;display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:center;padding:0 14px}
+  .hero img{width:100%;border-radius:16px;border:4px solid #e2e8f0;object-fit:cover}
+  .panel{background:var(--white);border-left:6px solid var(--primary);border-radius:14px;padding:18px}
+  .panel h2{margin:0 0 8px;color:#0f172a}
+  .tag{display:inline-block;background:#ccfbf1;border:1px solid #99f6e4;color:#115e59;border-radius:999px;padding:6px 12px;margin:6px 6px 0 0;font-size:.9rem}
+
+  /* Sections */
+  .section{max-width:1120px;margin:22px auto;background:var(--white);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+  .section h2{margin:0 0 12px;color:#111}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+
+  .card{background:#f8fafc;border:1px solid #e5e7eb;border-left:6px solid var(--primary);border-radius:10px;padding:12px;transition:.3s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 6px 12px rgba(0,0,0,.08)}
+
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .feature{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px}
+  .feature h3{margin:0 0 6px}
+  .muted{color:var(--muted)}
+
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:14px}
+  .gallery img{width:100%;border-radius:10px;border:2px solid #e2e8f0;object-fit:cover;aspect-ratio:4/3;transition:.35s;background:#fff}
+  .gallery img:hover{transform:scale(1.04);box-shadow:0 12px 28px rgba(0,0,0,.18)}
+
+  .cta{margin-top:12px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{background:var(--primary);color:#fff;padding:12px 16px;border-radius:10px;font-weight:800;display:inline-flex;align-items:center;gap:8px;transition:transform .2s ease, box-shadow .2s ease}
+  .btn.secondary{background:#fff;color:#0f172a;border:2px solid #0f172a}
+  .btn.accent{background:var(--accent);color:#0b1020}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.15)}
+
+  .map{max-width:1120px;margin:16px auto;border-radius:12px;overflow:hidden;border:3px solid var(--primary)}
+  .map iframe{width:100%;height:360px;border:0;display:block}
+
+  footer{background:#0b1220;color:#fff;text-align:center;padding:18px;margin-top:26px;border-top:6px solid var(--accent)}
+
+  .bar{position:fixed;left:0;right:0;bottom:0;background:#ffffffd9;backdrop-filter:blur(6px);display:flex;gap:10px;justify-content:center;padding:10px;border-top:2px solid var(--primary);z-index:999}
+  .bar a{background:#0b1220;color:#fff;padding:10px 14px;border-radius:999px;font-weight:800}
+  .bar a:nth-child(2){background:var(--accent);color:#0b1020}
+  @media(min-width:820px){.bar{display:none}}
+  @media(max-width:980px){.hero{grid-template-columns:1fr}}
+
+  /* Animations */
+  @keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  .reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+</style>
+
+<!-- Données structurées -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"TransportationService",
+  "name":"TRANSPORT PARISIEN",
+  "url":"https://exemple.fr/",
+  "image":"https://lh4.googleusercontent.com/GeHfS2t4wiy4jM_njiyDHuMXwe8XO07v4DXmtK-DiHo1vXfYX0x70XQ6uoKr91K22tHUZLQVCaz5vHr5gi5v_Y75ZInXBfIR6PDJLQLNKMkE5YjqWj8q0mYBk5WtXd2bu8FKADAS",
+  "logo":"https://avatars.mds.yandex.net/i?id=33668be0b9d70d901bbb129a9befae41501c233d-9052188-images-thumbs&n=13",
+  "telephone":"+33-7-59-12-09-88",
+  "email":"support@bazarios.shop",
+  "areaServed":"Île‑de‑France",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"AVENUE DES SABLONS",
+    "postalCode":"91350",
+    "addressLocality":"GRIGNY",
+    "addressRegion":"ÎLE‑DE‑FRANCE",
+    "addressCountry":"FR"
+  },
+  "description":"Courses dédiées, transferts aéroports & gares, livraison urgente, tournée dernière‑mile"
+}
+</script>
 </head>
 <body>
-  <header>
-    <h1>CAP Garland, LLC</h1>
-    <p>Private Investment Fund</p>
-  </header>
 
-  <section>
-    <h2>About Us</h2>
-    <p>CAP Garland, LLC is a Washington-based private investment fund focused on delivering value through diversified investment strategies.</p>
+<header role="banner">
+  <div class="wrap">
+    <a class="brand" href="#haut" aria-label="Accueil TRANSPORT PARISIEN">
+      <img src="https://avatars.mds.yandex.net/i?id=33668be0b9d70d901bbb129a9befae41501c233d-9052188-images-thumbs&n=13" alt="Logo TRANSPORT PARISIEN">
+      <div>
+        <h1>TRANSPORT PARISIEN</h1>
+        <p class="tagline">Transport & Logistique urbaine • Grigny (91350)</p>
+      </div>
+    </a>
+  </div>
+</header>
 
-    <h2>Contact</h2>
-    <div class="contact">
-      <p><strong>Address:</strong> 915 W 2nd Ave, Spokane, WA 99201</p>
-      <p><strong>Email:</strong> <a href="mailto:ryanberg@capgarland.shop">ryanberg@capgarland.shop</a></p>
-      <p><strong>Phone:</strong> (509) 822-3850</p>
+<nav aria-label="Navigation principale" role="navigation">
+  <div class="navwrap">
+    <a href="#apropos">À propos</a>
+    <a href="#services">Services</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HÉROS -->
+<section class="hero reveal" id="haut">
+  <img src="https://lh4.googleusercontent.com/GeHfS2t4wiy4jM_njiyDHuMXwe8XO07v4DXmtK-DiHo1vXfYX0x70XQ6uoKr91K22tHUZLQVCaz5vHr5gi5v_Y75ZInXBfIR6PDJLQLNKMkE5YjqWj8q0mYBk5WtXd2bu8FKADAS" alt="Véhicules de transport en opération">
+  <div class="panel" aria-label="Introduction">
+    <h2>À l’heure. En sécurité.</h2>
+    <p>Transferts aéroports & gares, courses dédiées pour pros, livraisons urgentes et tournées dernière‑mile en Île‑de‑France.</p>
+    <div>
+      <span class="tag">🚐 Transferts</span>
+      <span class="tag">📦 Livraisons urgentes</span>
+      <span class="tag">🕒 7j/7 sur réservation</span>
+      <span class="tag">📞 Devis rapide</span>
     </div>
-  </section>
+    <div class="cta">
+      <a class="btn accent" href="tel:+33759120988" aria-label="Appeler TRANSPORT PARISIEN au 07 59 12 09 88">📞 Appeler : +33 7 59 12 09 88</a>
+      <a class="btn secondary" href="mailto:support@bazarios.shop" aria-label="Envoyer un email à TRANSPORT PARISIEN">✉️ Email : support@bazarios.shop</a>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 CAP Garland, LLC. All rights reserved.
-  </footer>
+<!-- À PROPOS -->
+<section id="apropos" class="section reveal" aria-labelledby="apropos-h">
+  <h2 id="apropos-h">À propos</h2>
+  <p><strong>TRANSPORT PARISIEN</strong> accompagne particuliers et entreprises pour des déplacements fiables et des livraisons ponctuelles dans toute l’Île‑de‑France.</p>
+  <p><strong>Adresse :</strong> Avenue des Sablons, 91350 Grigny, France •
+     <strong>Email :</strong> <a href="mailto:support@bazarios.shop">support@bazarios.shop</a> •
+     <strong>Téléphone :</strong> <a href="tel:+33759120988">+33 7 59 12 09 88</a></p>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section reveal" aria-labelledby="services-h">
+  <h2 id="services-h">Services</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>Transferts Aéroports & Gares</h3>
+      <p>Prise en charge avec suivi de vol/train, attente incluse, aide bagages.</p>
+    </div>
+    <div class="feature">
+      <h3>Courses Dédiées Pro</h3>
+      <p>Documents, pièces urgentes, navettes inter‑sites avec traçabilité.</p>
+    </div>
+    <div class="feature">
+      <h3>Livraison Dernière‑Mile</h3>
+      <p>Tournées planifiées, créneaux serrés, confirmation de livraison.</p>
+    </div>
+    <div class="feature">
+      <h3>Mise à Disposition</h3>
+      <p>Chauffeur à l’heure, journée ou événement (sur devis).</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section id="galerie" class="section reveal" aria-labelledby="galerie-h">
+  <h2 id="galerie-h">Galerie</h2>
+  <div class="gallery">
+    <img src="https://mf.b37mrtl.ru/files/2016.07/article/578e0886c3618876618b4579.jpg" alt="Logistique urbaine">
+    <img src="https://avatars.mds.yandex.net/i?id=33668be0b9d70d901bbb129a9befae41501c233d-9052188-images-thumbs&n=13" alt="Identité visuelle de l’entreprise">
+    <img src="https://lh4.googleusercontent.com/GeHfS2t4wiy4jM_njiyDHuMXwe8XO07v4DXmtK-DiHo1vXfYX0x70XQ6uoKr91K22tHUZLQVCaz5vHr5gi5v_Y75ZInXBfIR6PDJLQLNKMkE5YjqWj8q0mYBk5WtXd2bu8FKADAS" alt="Véhicules en flotte">
+  </div>
+</section>
+
+<!-- CARTE -->
+<section class="map reveal" id="carte-embed" aria-label="Carte">
+  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=AVENUE+DES+SABLONS+91350+GRIGNY+FRANCE&output=embed"
+          title="Carte vers TRANSPORT PARISIEN"></iframe>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section reveal" aria-labelledby="contact-h">
+  <h2 id="contact-h">Contact & Horaires</h2>
+  <div class="grid">
+    <div>
+      <p>📧 <strong>Email :</strong> <a href="mailto:support@bazarios.shop">support@bazarios.shop</a></p>
+      <p>📞 <strong>Téléphone :</strong> <a href="tel:+33759120988">+33 7 59 12 09 88</a></p>
+      <p>📍 <strong>Adresse :</strong> Avenue des Sablons, 91350 Grigny, France</p>
+    </div>
+    <div>
+      <p><em>Horaires</em></p>
+      <ul>
+        <li>Lun–Dim : 6:00 – 23:00 (sur réservation)</li>
+      </ul>
+      <p class="muted"><small>Urgences et demandes spécifiques : sur devis.</small></p>
+    </div>
+  </div>
+  <div class="cta">
+    <a class="btn accent" href="tel:+33759120988">Appeler maintenant</a>
+    <a class="btn" href="mailto:support@bazarios.shop?subject=Devis%20transport">Demander un devis</a>
+  </div>
+</section>
+
+<!-- BARRE MOBILE -->
+<div class="bar" role="navigation" aria-label="Actions rapides">
+  <a href="tel:+33759120988">Appeler</a>
+  <a href="mailto:support@bazarios.shop">Email</a>
+  <a href="#services">Services</a>
+</div>
+
+<footer role="contentinfo">
+  <p>&copy; 2025 TRANSPORT PARISIEN — À l’heure. En sécurité.</p>
+</footer>
+
+<script>
+// Révélation au défilement
+(function(){
+  const addRevealTo = [
+    '.hero', '.hero .panel', '.section', '.feature', '.gallery img', '.map iframe', '.btn'
+  ];
+  const all = document.querySelectorAll(addRevealTo.join(','));
+  all.forEach(el=>el.classList.add('reveal'));
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+  }, {threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+})();
+</script>
 </body>
 </html>
